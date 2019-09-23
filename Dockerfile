@@ -7,9 +7,9 @@ VOLUME /root/.local/share/Mailpile
 VOLUME /root/.gnupg
 
 # Install requirements
-RUN apk add --no-cache git zlib gnupg1 py2-pip \
+RUN apk add --no-cache git zlib gnupg py2-pip \
   openssl py-jinja2 py-libxml2 py-libxslt py-lxml py-pbr py-pillow \
-  py-cffi py-cryptography ca-certificates && \
+  py-cffi py-cryptography ca-certificates tor && \
   git clone https://github.com/mailpile/Mailpile.git --branch $VERSION --single-branch --depth=1 && \
   cd /Mailpile && \
   pip install -r requirements.txt && \
