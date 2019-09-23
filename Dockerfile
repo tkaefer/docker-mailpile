@@ -6,6 +6,12 @@ ARG VERSION=release/1.0
 VOLUME /root/.local/share/Mailpile
 VOLUME /root/.gnupg
 
+ENV "MAILPILE_GnuPG" /usr/bin/gpg
+ENV "MAILPILE_GnuPG/dm" /usr/bin/dirmngr
+ENV "MAILPILE_GnuPG/ga" /usr/bin/gpg-agent
+ENV "MAILPILE_OpenSSL" /usr/bin/openssl
+ENV "MAILPILE_Tor" /usr/bin/tor
+
 # Install requirements
 RUN apk add --no-cache git zlib gnupg py2-pip \
   openssl py-jinja2 py-libxml2 py-libxslt py-lxml py-pbr py-pillow \
